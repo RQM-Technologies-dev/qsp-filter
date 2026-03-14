@@ -25,12 +25,17 @@ jobs:
           python -m pip install --upgrade pip
           if [ "${{ matrix.python-version }}" = "3.9" ]; then
             pip install --ignore-requires-python "git+https://github.com/RQM-Technologies-dev/qsp-core.git"
-            pip install --ignore-requires-python ".[dev]" || pip install --ignore-requires-python .
+            pip install --ignore-requires-python ".[dev]" || {
+              pip install --ignore-requires-python .
+              pip install pytest
+            }
           else
             pip install "git+https://github.com/RQM-Technologies-dev/qsp-core.git"
-            pip install ".[dev]" || pip install .
+            pip install ".[dev]" || {
+              pip install .
+              pip install pytest
+            }
           fi
-          pip install pytest
 
       - name: Run tests
         run: pytest
