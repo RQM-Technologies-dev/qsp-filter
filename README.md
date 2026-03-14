@@ -1,3 +1,5 @@
+<img src="https://github.com/RQM-Technologies-dev/qsp-filter/actions/workflows/ci.yml/badge.svg">
+
 # qsp-filter
 
 `qsp-filter` is the **Layer-1 filtering and signal-conditioning primitives library** of the RQM
