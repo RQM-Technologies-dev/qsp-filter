@@ -213,11 +213,15 @@ See [`docs/repo-roadmap.md`](docs/repo-roadmap.md) for the versioned roadmap.
 | Min-max, z-score, L2 normalization | **qsp-filter** |
 | Hard clip, soft clip | **qsp-filter** |
 
+## Publishing
+
+Releases are automatically published to PyPI using GitHub Actions and PyPI Trusted Publishing.
+Release artifacts are also attached to GitHub Releases.
+
 ## Installation
 
 ```bash
-pip install qsp-core   # install the dependency first
-pip install -e .       # install qsp-filter in editable mode
+pip install qsp-filter
 ```
 
 ## Package structure
