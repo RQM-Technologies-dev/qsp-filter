@@ -1,9 +1,9 @@
-"""Tests for qsp_filter.clipping."""
+"""Tests for qsp.filter.clipping."""
 
 import math
 import pytest
 
-from qsp_filter.clipping import clip_signal, soft_clip_signal
+from qsp.filter.clipping import clip_signal, soft_clip_signal
 
 
 class TestClipSignal:

@@ -109,14 +109,15 @@ A typical pipeline might apply `qsp-filter` smoothing and normalization **before
 ## Module Layout
 
 ```
-qsp_filter/
-├── __init__.py        Public API re-exports
-├── smoothing.py       moving_average, weighted_moving_average,
-│                      exponential_moving_average
-├── normalization.py   min_max_normalize, z_score_normalize,
-│                      l2_normalize
-├── clipping.py        clip_signal, soft_clip_signal
-└── utils.py           Internal validation helpers
+qsp/
+└── filter/
+    ├── __init__.py        Public API re-exports
+    ├── smoothing.py       moving_average, weighted_moving_average,
+    │                      exponential_moving_average
+    ├── normalization.py   min_max_normalize, z_score_normalize,
+    │                      l2_normalize
+    ├── clipping.py        clip_signal, soft_clip_signal
+    └── utils.py           Internal validation helpers
 ```
 
 ### smoothing.py
@@ -140,7 +141,7 @@ Provides hard clipping (delegated to `qsp.filters.clip`) and soft clipping
 
 ### utils.py
 
-Internal validation helpers shared across the `qsp_filter` modules.
+Internal validation helpers shared across the `qsp.filter` modules.
 These helpers are specific to the filtering layer; lower-level validation
 utilities live in `qsp.utils` inside qsp-core.
 
@@ -172,7 +173,7 @@ See [`downstream-usage.md`](downstream-usage.md) for concrete usage patterns.
 
 ## Dependency Rules
 
-- `qsp_filter` → `qsp-core` (required runtime dependency)
-- `qsp_filter` → nothing else (no optional dependencies in core modules)
+- `qsp.filter` → `qsp-core` (required runtime dependency)
+- `qsp.filter` → nothing else (no optional dependencies in core modules)
 - Quaternion and SU(2) primitives must **not** be re-implemented here
 - Tests use only the standard library and pytest

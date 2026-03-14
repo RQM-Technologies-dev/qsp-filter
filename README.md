@@ -227,12 +227,13 @@ pip install qsp-filter
 ## Package structure
 
 ```
-qsp_filter/
-├── __init__.py        ← public API surface
-├── smoothing.py       ← moving_average, weighted_moving_average, exponential_moving_average
-├── normalization.py   ← min_max_normalize, z_score_normalize, l2_normalize
-├── clipping.py        ← clip_signal, soft_clip_signal
-└── utils.py           ← shared validation helpers (filtering layer only)
+qsp/
+└── filter/
+    ├── __init__.py        ← public API surface
+    ├── smoothing.py       ← moving_average, weighted_moving_average, exponential_moving_average
+    ├── normalization.py   ← min_max_normalize, z_score_normalize, l2_normalize
+    ├── clipping.py        ← clip_signal, soft_clip_signal
+    └── utils.py           ← shared validation helpers (filtering layer only)
 ```
 
 ## Running tests

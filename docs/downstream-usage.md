@@ -39,7 +39,7 @@ Apply a moving average before passing a signal to `qsp-fft` to reduce noise that
 would otherwise widen spectral peaks or raise the noise floor.
 
 ```python
-from qsp_filter import moving_average
+from qsp.filter import moving_average
 from qsp.transforms import dft  # qsp-fft
 
 raw_signal = [...]
@@ -53,7 +53,7 @@ Normalize a signal to `[0, 1]` or zero mean / unit variance before passing it to
 `qsp-modulation` to ensure consistent amplitude ranges across batches.
 
 ```python
-from qsp_filter import min_max_normalize
+from qsp.filter import min_max_normalize
 
 raw_signal = [...]
 normalized = min_max_normalize(raw_signal)
@@ -66,7 +66,7 @@ Clip sensor readings to a known safe range before running diagnostics to prevent
 transient spikes from corrupting statistics.
 
 ```python
-from qsp_filter import clip_signal
+from qsp.filter import clip_signal
 
 sensor_data = [...]
 safe_data = clip_signal(sensor_data, minimum=-1.0, maximum=1.0)
@@ -79,7 +79,7 @@ Use soft clipping when abrupt truncation would create artifacts. The tanh-based
 saturation curve gracefully compresses large values.
 
 ```python
-from qsp_filter import soft_clip_signal
+from qsp.filter import soft_clip_signal
 
 signal = [...]
 saturated = soft_clip_signal(signal, limit=0.8)
@@ -91,7 +91,7 @@ A sensor fusion pipeline might smooth raw IMU data before passing it to orientat
 estimation helpers in `qsp-orientation`.
 
 ```python
-from qsp_filter import exponential_moving_average
+from qsp.filter import exponential_moving_average
 
 raw_imu = [...]
 smoothed_imu = exponential_moving_average(raw_imu, alpha=0.3)
@@ -104,7 +104,7 @@ A complete preprocessing chain might combine smoothing, normalization, and clipp
 before handing data to spectral or modulation analysis.
 
 ```python
-from qsp_filter import (
+from qsp.filter import (
     exponential_moving_average,
     z_score_normalize,
     clip_signal,

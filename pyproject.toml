@@ -28,4 +28,5 @@ dependencies = [
 dev = ["pytest>=7"]
 
 [tool.setuptools.packages.find]
-include = ["qsp_filter*"]
+namespaces = true
+include = ["qsp*"]

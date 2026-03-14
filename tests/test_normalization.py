@@ -1,9 +1,9 @@
-"""Tests for qsp_filter.normalization."""
+"""Tests for qsp.filter.normalization."""
 
 import math
 import pytest
 
-from qsp_filter.normalization import l2_normalize, min_max_normalize, z_score_normalize
+from qsp.filter.normalization import l2_normalize, min_max_normalize, z_score_normalize
 
 
 class TestMinMaxNormalize:

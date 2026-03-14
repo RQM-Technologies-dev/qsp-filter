@@ -1,9 +1,9 @@
-"""Tests for qsp_filter.smoothing."""
+"""Tests for qsp.filter.smoothing."""
 
 import math
 import pytest
 
-from qsp_filter.smoothing import (
+from qsp.filter.smoothing import (
     exponential_moving_average,
     moving_average,
     weighted_moving_average,

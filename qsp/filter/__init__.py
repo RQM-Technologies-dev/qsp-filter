@@ -1,4 +1,4 @@
-"""qsp_filter – filtering layer of the RQM Technologies QSP ecosystem.
+"""qsp.filter – filtering layer of the RQM Technologies QSP ecosystem.
 
 This package provides smoothing, normalization, and clipping utilities for
 real-valued signals. It depends on ``qsp-core`` for shared quaternion math
@@ -6,9 +6,9 @@ and basic filtering primitives.
 
 Typical usage::
 
-    from qsp_filter.smoothing import exponential_moving_average
-    from qsp_filter.normalization import z_score_normalize
-    from qsp_filter.clipping import soft_clip_signal
+    from qsp.filter.smoothing import exponential_moving_average
+    from qsp.filter.normalization import z_score_normalize
+    from qsp.filter.clipping import soft_clip_signal
 
 Public API surface
 ------------------

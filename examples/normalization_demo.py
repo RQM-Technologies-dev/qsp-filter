@@ -1,10 +1,10 @@
-"""Normalization demo – runnable example for qsp_filter.normalization.
+"""Normalization demo – runnable example for qsp.filter.normalization.
 
 Run with:
     python examples/normalization_demo.py
 """
 
-from qsp_filter.normalization import l2_normalize, min_max_normalize, z_score_normalize
+from qsp.filter.normalization import l2_normalize, min_max_normalize, z_score_normalize
 
 signal = [-4.0, -2.0, 0.0, 2.0, 4.0]
 
