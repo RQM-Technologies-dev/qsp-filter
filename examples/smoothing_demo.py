@@ -1,10 +1,10 @@
-"""Smoothing demo – runnable example for qsp_filter.smoothing.
+"""Smoothing demo – runnable example for qsp.filter.smoothing.
 
 Run with:
     python examples/smoothing_demo.py
 """
 
-from qsp_filter.smoothing import (
+from qsp.filter.smoothing import (
     exponential_moving_average,
     moving_average,
     weighted_moving_average,

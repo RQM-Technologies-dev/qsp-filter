@@ -11,23 +11,23 @@ By importing from `qsp-core` instead of reimplementing shared logic,
 
 ### `qsp.filters.moving_average`
 
-`qsp_filter.smoothing.moving_average` is a thin wrapper around
+`qsp.filter.smoothing.moving_average` is a thin wrapper around
 `qsp.filters.moving_average`. The wrapper adds local input validation
 (`ensure_positive_int`) before delegating, so callers get clear error
 messages regardless of which package they call.
 
 ```python
-# qsp_filter/smoothing.py
+# qsp/filter/smoothing.py
 from qsp.filters import moving_average as _core_moving_average
 ```
 
 ### `qsp.filters.clip`
 
-`qsp_filter.clipping.clip_signal` delegates to `qsp.filters.clip`
+`qsp.filter.clipping.clip_signal` delegates to `qsp.filters.clip`
 after validating the `minimum` and `maximum` arguments locally.
 
 ```python
-# qsp_filter/clipping.py
+# qsp/filter/clipping.py
 from qsp.filters import clip as _core_clip
 ```
 

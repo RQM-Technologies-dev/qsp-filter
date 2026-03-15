@@ -12,7 +12,7 @@ be added, versioning guidance, and a contribution checklist.
 - Smoothing helpers: `moving_average`, `weighted_moving_average`, `exponential_moving_average`
 - Normalization helpers: `min_max_normalize`, `z_score_normalize`, `l2_normalize`
 - Clipping helpers: `clip_signal`, `soft_clip_signal`
-- Internal validation utilities: `qsp_filter.utils`
+- Internal validation utilities: `qsp.filter.utils`
 
 All additions to this repository must remain within the filtering and signal-conditioning
 primitives category. See [`architecture.md`](architecture.md) for the full boundary definition.

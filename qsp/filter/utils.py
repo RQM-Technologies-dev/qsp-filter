@@ -1,4 +1,4 @@
-"""Shared validation helpers for qsp_filter modules.
+"""Shared validation helpers for qsp.filter modules.
 
 Only helpers that clearly belong in the filtering layer belong here.
 Quaternion and SU(2) utilities belong in qsp-core.

@@ -1,16 +1,16 @@
 # API Overview
 
-Complete reference for the `qsp_filter` public API.
-All functions listed here are importable directly from `qsp_filter` or from their
+Complete reference for the `qsp.filter` public API.
+All functions listed here are importable directly from `qsp.filter` or from their
 respective sub-modules.
 
-`qsp_filter` is designed for downstream reuse. Consumers import these helpers to
+`qsp.filter` is designed for downstream reuse. Consumers import these helpers to
 condition signals before FFT analysis, modulation, orientation fusion, or any other
 processing step that requires stable, normalized, or bounded inputs.
 
 ---
 
-## Smoothing Helpers (`qsp_filter.smoothing`)
+## Smoothing Helpers (`qsp.filter.smoothing`)
 
 Smoothing helpers reduce high-frequency variation in real-valued signals. Note that
 `moving_average` and `weighted_moving_average` **shorten** the output sequence;
@@ -60,7 +60,7 @@ Length-preserving: the first output equals the first input sample.
 
 ---
 
-## Normalization Helpers (`qsp_filter.normalization`)
+## Normalization Helpers (`qsp.filter.normalization`)
 
 Normalization helpers rescale signals for downstream consistency. All three helpers
 return **all zeros** when the input has no variation (constant signal or zero vector).
@@ -105,7 +105,7 @@ Returns all zeros when the signal is the zero vector.
 
 ---
 
-## Clipping Helpers (`qsp_filter.clipping`)
+## Clipping Helpers (`qsp.filter.clipping`)
 
 Clipping helpers bound signal values to prevent downstream overflow or saturation.
 Hard clipping is useful for strict range enforcement; soft clipping provides a smooth
@@ -143,9 +143,9 @@ truncating them, which preserves more signal shape near the boundary.
 
 ---
 
-## Utility Helpers (`qsp_filter.utils`)
+## Utility Helpers (`qsp.filter.utils`)
 
-These are **internal** validation helpers shared across `qsp_filter` modules.
+These are **internal** validation helpers shared across `qsp.filter` modules.
 They are not part of the public API surface and may change without notice.
 
 - `ensure_non_empty(values, name)` — raises `ValueError` if the sequence is empty
@@ -154,16 +154,16 @@ They are not part of the public API surface and may change without notice.
 - `ensure_non_negative_weights(weights)` — raises `ValueError` if any weight is
   negative
 
-Downstream code should not import directly from `qsp_filter.utils`.
+Downstream code should not import directly from `qsp.filter.utils`.
 
 ---
 
 ## Top-Level Imports
 
-All public functions are re-exported from `qsp_filter` directly:
+All public functions are re-exported from `qsp.filter` directly:
 
 ```python
-from qsp_filter import (
+from qsp.filter import (
     # Smoothing
     moving_average,
     weighted_moving_average,
